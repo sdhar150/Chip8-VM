@@ -1,6 +1,6 @@
-# CHIP-8 Emulator
+# CHIP-8 Virtual Machine
 
-A modern C++ implementation of the classic **CHIP-8 virtual machine**, featuring SDL2-based graphics and keyboard input. Created by Soham Dhar.  
+A basic program that is a modern C++ implementation of the classic **CHIP-8 virtual machine**, featuring SDL2-based graphics and keyboard input. Created by Soham Dhar.  
 Designed with **clean architecture**, cross-platform compatibility, and modern C++ practices in mind.  
 
 ---
@@ -10,9 +10,7 @@ Designed with **clean architecture**, cross-platform compatibility, and modern C
 - Full CHIP-8 opcode support (00E0 – FX65)  
 - SDL2 graphics output (64×32 resolution, scalable)  
 - Keyboard input mapped to standard CHIP-8 layout  
-- Cross-platform: Linux, macOS, Windows (MSYS2 / MinGW / Visual Studio)  
-- Debug and release build configurations  
-- Clean out-of-source build structure (`src/`, `include/`, `build/`, `bin/`)  
+- Cross-platform: Linux, macOS, Windows   
 
 ---
 
@@ -29,7 +27,7 @@ chip8/
 │   ├── Platform.cpp
 │   ├── chip8.cpp
 │   └── opcodes.cpp
-├── roms/         # Optional: Store .ch8 ROMs here
+├── roms/         # Optional: I store my .ch8 test ROMs here
 ├── Makefile      # Build script
 └── README.md     # Project documentation
 ```
