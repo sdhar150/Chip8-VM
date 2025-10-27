@@ -74,12 +74,9 @@ pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 ---
 
 ## Usage
-```bash
-mkdir roms
+Currently this only supports .ch8 formatted files
 ```
-Copy your .ch8 file into roms.
-```
-./bin/chip8 10 10 roms/<YourROM>.ch8
+./bin/chip8 <Scale> <Delay (ms)> <ROM>.ch8
 ```
 ---
 
