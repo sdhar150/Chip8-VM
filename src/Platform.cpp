@@ -10,7 +10,7 @@
 #include <iostream>
 #include <stdexcept>
 
-Platform::Platform(const char* title, int windowWidth, int windowHeight,
+Platform::Platform(const char *title, int windowWidth, int windowHeight,
                    int textureWidth, int textureHeight)
     : windowWidth(windowWidth), windowHeight(windowHeight),
       textureWidth(textureWidth), textureHeight(textureHeight)
@@ -74,7 +74,7 @@ Platform::~Platform()
     SDL_Quit();
 }
 
-void Platform::Update(const void* buffer, int pitch)
+void Platform::Update(const void *buffer, int pitch)
 {
     SDL_UpdateTexture(texture, nullptr, buffer, pitch);
     SDL_RenderClear(renderer);
@@ -82,7 +82,7 @@ void Platform::Update(const void* buffer, int pitch)
     SDL_RenderPresent(renderer);
 }
 
-bool Platform::ProcessInput(uint8_t* keys)
+bool Platform::ProcessInput(uint8_t *keys)
 {
     bool quit = false;
     SDL_Event event;
@@ -114,7 +114,7 @@ bool Platform::ProcessInput(uint8_t* keys)
                 break;
             }
 
-            for (const auto& m : keyMap)
+            for (const auto &m : keyMap)
             {
                 if (event.key.keysym.sym == m.key)
                 {

@@ -12,7 +12,7 @@
 #include <cstring>
 #include <iostream>
 
-int Processor::load_rom(char* filename)
+int Processor::load_rom(char *filename)
 {
     std::ifstream rom(filename, std::ios::binary);
 
@@ -23,7 +23,7 @@ int Processor::load_rom(char* filename)
     }
 
     int available_memory = MEM_SIZE_BYTES - START_ADDRESS;
-    rom.read(reinterpret_cast<char*>(memory + START_ADDRESS), available_memory);
+    rom.read(reinterpret_cast<char *>(memory + START_ADDRESS), available_memory);
 
     if (!rom && !rom.eof())
     {

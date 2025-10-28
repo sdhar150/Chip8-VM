@@ -13,7 +13,7 @@
 #include <string>
 #include <stdexcept>
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     if (argc != 4)
     {
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
         Platform platform("CHIP-8 Emulator", windowWidth, windowHeight, VIDEO_WIDTH, VIDEO_HEIGHT);
         Processor chip8;
 
-        if (chip8.load_rom(const_cast<char*>(romFile.c_str())) != 0)
+        if (chip8.load_rom(const_cast<char *>(romFile.c_str())) != 0)
         {
             std::cerr << "Failed to load ROM: " << romFile << "\n";
             return EXIT_FAILURE;
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
             SDL_Delay(1);
         }
     }
-    catch (const std::exception& e)
+    catch (const std::exception &e)
     {
         std::cerr << "Fatal error: " << e.what() << '\n';
         return EXIT_FAILURE;

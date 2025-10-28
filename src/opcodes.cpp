@@ -78,28 +78,24 @@ void Processor::OP_8xy0()
     uint8_t y = (opcode & 0x00F0u) >> 4u;
     registers[x] = registers[y];
 }
-
 void Processor::OP_8xy1()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
     uint8_t y = (opcode & 0x00F0u) >> 4u;
     registers[x] |= registers[y];
 }
-
 void Processor::OP_8xy2()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
     uint8_t y = (opcode & 0x00F0u) >> 4u;
     registers[x] &= registers[y];
 }
-
 void Processor::OP_8xy3()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
     uint8_t y = (opcode & 0x00F0u) >> 4u;
     registers[x] ^= registers[y];
 }
-
 void Processor::OP_8xy4()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
@@ -108,7 +104,6 @@ void Processor::OP_8xy4()
     registers[0xF] = sum > 0xFF;
     registers[x] = static_cast<uint8_t>(sum);
 }
-
 void Processor::OP_8xy5()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
@@ -116,7 +111,6 @@ void Processor::OP_8xy5()
     registers[0xF] = registers[x] >= registers[y];
     registers[x] -= registers[y];
 }
-
 void Processor::OP_8xy6()
 {
     uint8_t x = (opcode & 0x0F00u) >> 8u;
@@ -187,7 +181,7 @@ void Processor::OP_Dxyn()
             if (px >= VIDEO_WIDTH || py >= VIDEO_HEIGHT)
                 continue;
 
-            uint32_t& pixel = video[py * VIDEO_WIDTH + px];
+            uint32_t &pixel = video[py * VIDEO_WIDTH + px];
             if (sprite & (0x80u >> col))
             {
                 if (pixel)
@@ -223,7 +217,7 @@ void Processor::OP_Fx0a()
     uint8_t x = (opcode & 0x0F00u) >> 8u;
     bool pressed = false;
 
-    for (int i = 0; i < NUM_KEYS; ++i)
+    for (unsigned int i = 0; i < NUM_KEYS; ++i)
     {
         if (keypad[i])
         {
