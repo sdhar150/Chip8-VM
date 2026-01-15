@@ -50,7 +50,7 @@ class Processor
     // Initialization
     Processor();
     uint8_t randGen();
-    int load_rom(char* filename);
+    int load_rom(char *filename);
     void cycle();
 
   private:

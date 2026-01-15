@@ -11,7 +11,7 @@ CXXFLAGS  := -std=c++17 -Wall -Wextra -O2 -Iinclude
 UNAME_S := $(shell uname -s)
 
 ifeq ($(OS),Windows_NT)
-    LIBS := -lmingw32 -lSDL2main -lSDL2 -lGL
+    LIBS := -lmingw32 -lSDL2main -lSDL2 -lopengl32
     RM   := del /Q
     EXE  := .exe
 else ifeq ($(UNAME_S),Darwin)
